@@ -1,0 +1,13 @@
+# PHPStorm Config Exclusions
+/.idea/remote-mappings.xml
+/.idea/workspace.xml
+/.idea/vcs.xml
+/.idea/$CACHE_FILE$
+
+# Composer Exclusions
+/vendor
+/vendor.prod
+
+# PHPUnit / Jenkins Exclusions
+/.phpunit.result.cache
+/reports

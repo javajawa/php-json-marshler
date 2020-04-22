@@ -1,0 +1,29 @@
+{
+    "name": "javajawa/json-marshler",
+    "description": "Typed-Where-Possible JSON Marshalling Library",
+    "type": "library",
+    "license": "BSD-2-Clause",
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "ext-simplexml": "^7.4",
+        "phpmd/phpmd": "*",
+        "phpstan/phpstan": "*",
+        "phpunit/phpunit": "*",
+        "slevomat/coding-standard": "*",
+        "squizlabs/php_codesniffer": "*",
+        "sentry/sdk": "^2"
+    },
+    "autoload": {
+        "psr-4": {
+            "JsonMarshler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JsonMarshler\\": "tests/"
+        }
+    }
+}

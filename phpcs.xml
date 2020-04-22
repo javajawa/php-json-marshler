@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
+    <description>CDN Origin Rules</description>
+
+    <config name="installed_paths" value="../../slevomat/coding-standard"/>
+
+    <file>./src</file>
+    <file>./tests</file>
+
+    <!-- Equivalent to -sp, show the full test names and report progress -->
+    <arg value="sp"/>
+
+    <arg name="colors"/>
+    <arg name="report" value="full,source" />
+    <arg name="extensions" value="php" />
+
+    <rule ref="PSR2" />
+
+    <rule ref="Generic">
+        <!-- VBoxSF Mapping means that permissions may be incorrect -->
+        <exclude name="Generic.Files.ExecutableFile.Executable" />
+
+        <!-- Use spaces for indent -->
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+
+        <!-- Require the file to end in a new line -->
+        <exclude name="Generic.Files.EndFileNoNewline.Found" />
+
+        <!-- Do not require filenames to be lower case -->
+        <exclude name="Generic.Files.LowercasedFilename.NotFound" />
+
+        <!-- Do not have a closing ?> at the bottom of each file -->
+        <exclude name="Generic.PHP.ClosingPHPTag.NotFound" />
+
+        <!-- Use ths short syntax for arrays ([] over array()) -->
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+
+        <!-- Functions and classes have braces on newlines -->
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
+        <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
+
+        <!-- Constants use upper case names -->
+        <exclude name="Generic.PHP.UpperCaseConstant.Found" />
+
+        <!-- There should be no space after a unary not -->
+        <exclude name="Generic.Formatting.SpaceAfterNot.Incorrect" />
+
+        <!-- There should be a space after a type cast -->
+        <exclude name="Generic.Formatting.NoSpaceAfterCast.SpaceFound" />
+
+        <!-- Allow parameters to be unused in sub classes -->
+        <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundInExtendedClass" />
+    </rule>
+
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+    </rule>
+    <rule ref="Squiz.Commenting.ClassComment">
+        <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed" />
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
+    <rule ref="Squiz.Commenting.VariableComment" />
+
+    <rule ref="SlevomatCodingStandard">
+        <!-- Do not require full qualification of global functions -->
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions.NonFullyQualified" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException" />
+
+        <!-- Disable some weird optional checks - Yoda comparisons, enforced ternaries, etc. -->
+        <exclude name="SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator.TernaryOperatorNotUsed" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.RequireYodaComparison" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing.IncorrectLinesCountAfterLastControlStructure" />
+
+        <!-- Allow the use of the PHP7.4 arrow lambda functions -->
+        <exclude name="SlevomatCodingStandard.Functions.DisallowArrowFunction.DisallowedArrowFunction" />
+
+        <!-- Exception class names may end in the word 'Exception' -->
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
+
+        <!-- As we are using lower case file names, the paths will never match -->
+        <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName.NoMatchBetweenTypeNameAndFileName" />
+
+        <!-- No blank lines at top and bottom of classes -->
+        <exclude name="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces" />
+
+        <!-- Allow doc comment blocks that only have a single line of content -->
+        <exclude name="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment" />
+
+        <!-- Allow `Used` names in annotations -->
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
+        <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces" />
+
+        <!-- Do not require trailing comma in function calls (syntax error in 7.2 -->
+        <exclude name="SlevomatCodingStandard.Functions.TrailingCommaInCall" />
+
+        <!-- Allow calls to new Foo(); to not need the parentheses -->
+        <exclude name="SlevomatCodingStandard.ControlStructures.NewWithParentheses.MissingParentheses" />
+
+        <!-- Favour 'boolean' over 'bool' in type hints (to prevent conflict with General rule -->
+        <exclude name="SlevomatCodingStandard.TypeHints.LongTypeHints.UsedLongTypeHint" />
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />
+
+        <!-- Allow 'useless' PHPDoc type hints (nothing wrong with them) -->
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.UselessAnnotation" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
+
+        <!-- Do not require separator characters in numeric literals -->
+        <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator.RequiredNumericLiteralSeparator" />
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
+        <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing.IncorrectLinesCountAfterLastContent" />
+        <properties>
+            <property name="linesCountBetweenDescriptionAndAnnotations" value="1" />
+            <property name="linesCountBetweenDifferentAnnotationsTypes" value="1" />
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+        <properties>
+            <property name="searchAnnotations" value="true" />
+            <property name="allowFullyQualifiedGlobalFunctions" value="true" />
+            <property name="allowFullyQualifiedGlobalConstants" value="true" />
+        </properties>
+    </rule>
+
+</ruleset>
