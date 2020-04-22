@@ -40,6 +40,8 @@ jobs:
 
       - name: PHPStan
         run:  vendor/bin/phpstan analyse --error-format=checkstyle | cs2pr
+        continue-on-error: true
 
       - name: PHPCS
         run:  vendor/bin/phpcs --format=checkstyle -q | cs2pr
+        continue-on-error: true

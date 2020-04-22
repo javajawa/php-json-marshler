@@ -54,14 +54,9 @@
         <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundInExtendedClass" />
     </rule>
 
-    <rule ref="Squiz.Commenting.FunctionComment">
-        <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
-    </rule>
-    <rule ref="Squiz.Commenting.ClassComment">
+    <rule ref="Squiz.Commenting">
         <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed" />
     </rule>
-    <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
-    <rule ref="Squiz.Commenting.VariableComment" />
 
     <rule ref="SlevomatCodingStandard">
         <!-- Do not require full qualification of global functions -->
@@ -114,6 +109,8 @@
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator.RequiredNumericLiteralSeparator" />
     </rule>
 
+    <!-- Have one line of whitespace between different sections of PHPDocs
+	     between description and @param and @return -->
     <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
         <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing.IncorrectLinesCountAfterLastContent" />
         <properties>
@@ -122,12 +119,15 @@
         </properties>
     </rule>
 
+	<!-- A 'use' is not to be considered unused if it appears in an annotation -->
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>
             <property name="searchAnnotations" value="true" />
         </properties>
     </rule>
 
+	<!-- Only 'use'd names can be refereneced, except for global functions and
+	     which can be bare -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
             <property name="searchAnnotations" value="true" />
