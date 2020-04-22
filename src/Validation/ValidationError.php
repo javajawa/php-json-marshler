@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace JsonMarshler\Validation;
 
@@ -6,8 +8,6 @@ use JsonSerializable;
 
 /**
  * A predicted or actual error found when marshalling JSON input into data classes.
- *
- *
  */
 abstract class ValidationError implements JsonSerializable
 {
@@ -17,13 +17,19 @@ abstract class ValidationError implements JsonSerializable
      * @var string
      */
     private string $field;
+
+    /**
+     * A human-readable description of the problem.
+     *
+     * @var string
+     */
     private string $problem;
 
     /**
-     * Returns a human-readable error string describing the validation problem.
+     * Base constructor for Validation errors.
      *
-     * @param string $field
-     * @param string $problem
+     * @param string $field   The field the error occurred on.
+     * @param string $problem A human-readable description of the error.
      */
     public function __construct(string $field, string $problem)
     {
@@ -52,12 +58,14 @@ abstract class ValidationError implements JsonSerializable
     }
 
     /**
+     * Serialises this error back into JSON.
+     *
      * @inheritDoc
      *
-     * @return array|mixed
+     * @return array<mixed>
      */
     public function jsonSerialize(): array
     {
-        return (array)$this;
+        return (array) $this;
     }
 }

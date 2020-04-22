@@ -40,8 +40,9 @@ jobs:
 
       - name: PHPStan
         run:  vendor/bin/phpstan analyse --error-format=checkstyle | cs2pr
-        continue-on-error: true
 
       - name: PHPCS
         run:  vendor/bin/phpcs --report=checkstyle -q | cs2pr
-        continue-on-error: true
+
+      - name: PHPMD
+        run:  vendor/bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode

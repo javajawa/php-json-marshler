@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace JsonMarshler\Validation;
 
@@ -12,13 +14,17 @@ use Iterator;
  */
 class ValidationErrors implements Countable, Iterator
 {
-    /** @var array<int, ValidationError> */
+    /**
+     * The backing storage of the errors.
+     *
+     * @var array<int, ValidationError>
+     */
     private array $buffer = [];
 
     /**
      * Adds one or more errors to this collection.
      *
-     * @param ValidationError ...$errors
+     * @param ValidationError ...$errors A list of errors to add.
      *
      * @return void
      */
@@ -41,6 +47,8 @@ class ValidationErrors implements Countable, Iterator
     }
 
     /**
+     * Gets the current item in the iterator.
+     *
      * @inheritDoc
      *
      * @return ValidationError
@@ -55,6 +63,8 @@ class ValidationErrors implements Countable, Iterator
     }
 
     /**
+     * Moves the iterator to the next element.
+     *
      * @inheritDoc
      *
      * @return void
@@ -65,6 +75,9 @@ class ValidationErrors implements Countable, Iterator
     }
 
     /**
+     * The index (key) of the current item in the iterator,
+     * or null if the iterator is not currently valid.
+     *
      * @inheritDoc
      *
      * @return int|null
@@ -75,6 +88,8 @@ class ValidationErrors implements Countable, Iterator
     }
 
     /**
+     * Whether the iterator is pointing at a valid item.
+     *
      * @inheritDoc
      *
      * @return bool
@@ -85,6 +100,8 @@ class ValidationErrors implements Countable, Iterator
     }
 
     /**
+     * Resets the iterator to the beginning.
+     *
      * @inheritDoc
      *
      * @return void
@@ -95,6 +112,8 @@ class ValidationErrors implements Countable, Iterator
     }
 
     /**
+     * Counts the number of errors that have been recorded.
+     *
      * @inheritDoc
      *
      * @return int

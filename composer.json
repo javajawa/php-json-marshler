@@ -9,7 +9,7 @@
     },
     "require-dev": {
         "ext-simplexml": "^7.4",
-        "phpmd/phpmd": "*",
+        "phpmd/phpmd": "dev-master",
         "phpstan/phpstan": "*",
         "phpunit/phpunit": "*",
         "slevomat/coding-standard": "*",
