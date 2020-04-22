@@ -43,5 +43,5 @@ jobs:
         continue-on-error: true
 
       - name: PHPCS
-        run:  vendor/bin/phpcs --format=checkstyle -q | cs2pr
+        run:  vendor/bin/phpcs --report=checkstyle -q | cs2pr
         continue-on-error: true
