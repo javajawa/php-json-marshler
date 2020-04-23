@@ -16,7 +16,7 @@ class NoOtherFields extends ValidationRule
     private array $acceptableFieldList;
 
 
-    public function verify(stdClass $data, ValidationErrors $errors): bool
+    public function verify(stdClass $data, ValidationErrors $errors): void
     {
         $fields = array_keys(get_object_vars($data));
 
