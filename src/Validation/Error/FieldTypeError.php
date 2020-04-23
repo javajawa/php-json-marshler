@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JsonMarshler\Validation;
+namespace JsonMarshler\Validation\Error;
 
 /**
  * Validation error caused by a field in the JSON not having the correct

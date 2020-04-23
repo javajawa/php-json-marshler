@@ -6,6 +6,7 @@ namespace JsonMarshler\Validation;
 
 use Countable;
 use Iterator;
+use JsonMarshler\Validation\Error\ValidationError;
 
 /**
  * A mutable collection of {@link ValidationError} objects.

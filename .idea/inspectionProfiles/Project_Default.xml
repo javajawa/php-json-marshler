@@ -354,14 +354,16 @@
     <inspection_tool class="PhpParamsInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpPossiblePolymorphicInvocationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpPrivateFieldCanBeLocalVariableInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="PhpPropertyNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpPropertyNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="m_maxLength" value="24" />
+    </inspection_tool>
     <inspection_tool class="PhpRedundantClosingTagInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpRedundantDocCommentInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PhpRedundantVariableDocTypeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpSeparateElseIfInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpShortOpenTagInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpSillyAssignmentInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="PhpSingleStatementWithBracesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpSingleStatementWithBracesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PhpStatementHasEmptyBodyInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpStatementWithoutBracesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpStaticAsDynamicMethodCallInspection" enabled="true" level="ERROR" enabled_by_default="true">
@@ -406,7 +408,9 @@
     </inspection_tool>
     <inspection_tool class="PhpUsageOfSilenceOperatorInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpVarUsageInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="PhpVariableNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpVariableNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="m_regex" value="[a-z][A-Za-z\d]*" />
+    </inspection_tool>
     <inspection_tool class="PhpVariableVariableInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpVoidFunctionResultUsedInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpWrongForeachArgumentTypeInspection" enabled="true" level="ERROR" enabled_by_default="true" />

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JsonMarshler;
 
-use JsonMarshler\Validation\ValidationErrors;
+use JsonMarshler\Importer\ValidationErrors;
 use LogicException;
 use stdClass;
 

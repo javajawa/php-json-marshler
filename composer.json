@@ -4,17 +4,18 @@
     "type": "library",
     "license": "BSD-2-Clause",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4"
+    },
+    "suggest": {
         "ext-json": "*"
     },
+    "homepage": "https://github.com/javjawa/php-json-marshler",
     "require-dev": {
-        "ext-simplexml": "^7.4",
         "phpmd/phpmd": "dev-master",
         "phpstan/phpstan": "*",
         "phpunit/phpunit": "*",
         "slevomat/coding-standard": "*",
-        "squizlabs/php_codesniffer": "*",
-        "sentry/sdk": "^2"
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {

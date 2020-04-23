@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JsonMarshler\Validation;
+namespace JsonMarshler\Validation\Error;
 
 use JsonSerializable;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JsonMarshler\Validation;
+namespace JsonMarshler\Validation\Error;
 
 /**
  * Represents an issue with a JSON input when a required field is missing.
