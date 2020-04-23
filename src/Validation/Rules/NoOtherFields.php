@@ -25,8 +25,6 @@ class NoOtherFields extends ValidationRule
         foreach ($unexpectedFields as $field) {
             $errors->add(new UnexpectedFieldError($field));
         }
-
-        return count($unexpectedFields) === 0;
     }
 
 
