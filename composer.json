@@ -11,6 +11,8 @@
     },
     "homepage": "https://github.com/javjawa/php-json-marshler",
     "require-dev": {
+        "ext-json": "*",
+
         "phpmd/phpmd": "dev-master",
         "phpstan/phpstan": "*",
         "phpunit/phpunit": "*",

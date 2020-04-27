@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JsonMarshler;
+namespace JsonMarshler\Importer;
 
-use JsonMarshler\Importer\ValidationErrors;
+use JsonMarshler\Validation\ValidationErrors;
 use LogicException;
-use stdClass;
 
 /**
  * Interface ObjectImporter
@@ -29,11 +28,11 @@ interface ObjectImporter
      * {@link ObjectImporter::import()} with the same arguments *must*
      * always result in an valid imported object being returned.
      *
-     * @param stdClass $sourceData The JSON blob to validate.
+     * @param object $sourceData The JSON blob to validate.
      *
      * @return ValidationErrors
      */
-    public function validate(stdClass $sourceData): ValidationErrors;
+    public function validate(object $sourceData): ValidationErrors;
 
     /**
      * Attempts to import a JSON blob into a specific PHP object.
@@ -45,11 +44,11 @@ interface ObjectImporter
      * is guaranteed to always return a valid instance of the objct.
      * Otherwise, a LogicException is thrown.
      *
-     * @param stdClass $sourceData The JSON blob to import.
+     * @param object $sourceData The JSON blob to import.
      *
      * @return T
      *
      * @throws LogicException If a validation error would have occurred.
      */
-    public function import(stdClass $sourceData): object;
+    public function import(object $sourceData): object;
 }

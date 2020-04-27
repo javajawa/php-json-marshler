@@ -123,4 +123,18 @@ class ValidationErrors implements Countable, Iterator
     {
         return count($this->buffer);
     }
+
+    /**
+     * Human readable version of this error list, mostly for use in tests.
+     *
+     * @return string
+     */
+    public function __toString(): string
+    {
+        if (count($this->buffer) === 0) {
+            return 'Validation Errors: None';
+        }
+
+        return 'Validation Errors: [' . "\n\t" . implode("\n\t", $this->buffer) . "\n]";
+    }
 }

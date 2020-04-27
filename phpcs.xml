@@ -64,9 +64,16 @@
 
         <!-- Do not require the "// end foo" comments everywhere -->
         <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>
+        <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing"/>
 
         <!-- Return type of scalars in Squiz has short/long form conflicts -->
+        <exclude name="Squiz.Commenting.FunctionComment.IncorrectTypeHint"/>
+        <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/>
         <exclude name="Squiz.Commenting.FunctionComment.InvalidReturn"/>
+        <exclude name="Squiz.Commenting.VariableComment.IncorrectVarType"/>
+
+        <!-- Brace on new-line even with multiline function signatures -->
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.NewlineBeforeOpenBrace"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard">
@@ -74,6 +81,9 @@
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants"/>
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions.NonFullyQualified"/>
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException"/>
+
+        <!-- Allow gaps between `use` and `use function` as per PSR-12 -->
+        <exclude name="SlevomatCodingStandard.Namespaces.UseSpacing.IncorrectLinesCountBetweenDifferentTypeOfUse"/>
 
         <!-- Disable some weird optional checks - Yoda comparisons, enforced ternaries, etc. -->
         <exclude name="SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator"/>
@@ -103,8 +113,8 @@
         <!-- Do not require trailing comma in function calls (syntax error in 7.2 -->
         <exclude name="SlevomatCodingStandard.Functions.TrailingCommaInCall"/>
 
-        <!-- Allow calls to new Foo(); to not need the parentheses -->
-        <exclude name="SlevomatCodingStandard.ControlStructures.NewWithParentheses.MissingParentheses"/>
+        <!-- Require calls to new Foo(); to have the parentheses -->
+        <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses.UselessParentheses"/>
 
         <!-- Favour 'boolean' over 'bool' in type hints (to prevent conflict with General rule -->
         <exclude name="SlevomatCodingStandard.TypeHints.LongTypeHints.UsedLongTypeHint"/>
@@ -117,6 +127,9 @@
 
         <!-- Do not require separator characters in numeric literals -->
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator.RequiredNumericLiteralSeparator"/>
+
+        <!-- Allow space based alignment by disabling Duplicate Space check -->
+        <exclude name="SlevomatCodingStandard.Whitespaces.DuplicateSpaces.DuplicateSpaces"/>
     </rule>
 
     <!-- Make the Slevomat strict type declaration compatible with PSR-12 -->

@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="JsonMarshler\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="JsonMarshler\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/reports" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan" />
     </content>
     <orderEntry type="inheritedJdk" />

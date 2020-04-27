@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace JsonMarshler\Validation\Rules;
 
 use JsonMarshler\Validation\ValidationErrors;
-use stdClass;
 
 /**
  * Abstract base class for a validation rules
@@ -13,10 +12,12 @@ use stdClass;
 abstract class ValidationRule
 {
     /**
-     * Run this rule, adding any errors to the {@link ValidationErrors}
+     * Run this rule, adding any errors to the {@link ValidationErrors}.
      *
-     * @param stdClass $data
-     * @param ValidationErrors $errors
+     * @param object           $data   The data to validate against.
+     * @param ValidationErrors $errors The output buffer of validation errors.
+     *
+     * @return void
      */
-    abstract public function verify(stdClass $data, ValidationErrors $errors): void;
+    abstract public function verify(object $data, ValidationErrors $errors): void;
 }

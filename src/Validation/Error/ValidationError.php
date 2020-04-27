@@ -66,6 +66,16 @@ abstract class ValidationError implements JsonSerializable
      */
     public function jsonSerialize(): array
     {
-        return (array) $this;
+        return get_object_vars($this);
+    }
+
+    /**
+     * Human readable version of the error, mostly for use in tests.
+     *
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return '[' . static::class . '] ' . $this->field . ' -- ' . $this->problem;
     }
 }
