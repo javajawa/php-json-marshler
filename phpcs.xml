@@ -2,7 +2,7 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer"
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
 
-    <description>CDN Origin Rules</description>
+    <description>Ben Harcourt's default PSR1+2+12 and extra</description>
 
     <config name="installed_paths" value="../../slevomat/coding-standard"/>
 
@@ -158,7 +158,7 @@
         </properties>
     </rule>
 
-    <!-- Only 'use'd names can be refereneced, except for global functions and
+    <!-- Only 'use'd names can be referenced, except for global functions and
          which can be bare -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
